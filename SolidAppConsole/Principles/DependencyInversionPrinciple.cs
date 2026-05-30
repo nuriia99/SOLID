@@ -17,32 +17,20 @@ public class DependencyInversionPrinciple : ISOLIDPrinciple
         Console.WriteLine("═══════════════════════════════════════════════════════════════");
         Console.WriteLine($"{Letter} - {Name.ToUpper()}");
         Console.WriteLine("═══════════════════════════════════════════════════════════════\n");
-        
+
         Console.WriteLine("📋 DEFINITION:");
-        Console.WriteLine("Depend on abstractions, not on concrete implementations.\n");
-        
-        Console.WriteLine("❌ BAD - Dependency on concrete classes:");
-        Console.WriteLine("  class Car");
-        Console.WriteLine("  {");
-        Console.WriteLine("    private GasolineEngine engine = new GasolineEngine();");
-        Console.WriteLine("    // Tightly coupled - I cannot change the engine");
-        Console.WriteLine("  }\n");
-        
-        Console.WriteLine("✅ GOOD - Dependency injection:");
-        Console.WriteLine("  interface IEngine { void Start(); }");
-        Console.WriteLine("  class GasolineEngine : IEngine { }");
-        Console.WriteLine("  class ElectricEngine : IEngine { }");
-        Console.WriteLine("  class Car");
-        Console.WriteLine("  {");
-        Console.WriteLine("    private IEngine engine;");
-        Console.WriteLine("    public Car(IEngine injectedEngine) => engine = injectedEngine;");
-        Console.WriteLine("  }\n");
-        
+        Console.WriteLine("States that high-level modules should not depend on low-level modules.");
+        Console.WriteLine("Instead, both should depend on abstractions.\n");
+
         Console.WriteLine("💡 BENEFITS:");
         Console.WriteLine("  • Low coupling");
         Console.WriteLine("  • Easy to test");
-        Console.WriteLine("  • Flexible and extensible");
-        
+        Console.WriteLine("  • Flexible and extensible \n");
+
+        Console.WriteLine("💡 DIP vs. Dependency Injection (DI):");
+        Console.WriteLine("Dependency injection is a design pattern. The class should not be responsible for creating");
+        Console.WriteLine("its dependencies. Instead, shifts the creation responsibility to another class \n");
+
         PauseMenu();
     }
 

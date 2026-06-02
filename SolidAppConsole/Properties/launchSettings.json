@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "SolidAppConsole": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "workingDirectory": ".",
+      "console": "externalTerminal"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════
+L - LISKOV SUBSTITUTION PRINCIPLE (LSP)
+═══════════════════════════════════════════════════════════════
+
+📋 DEFINITION:
+Objects of derived classes must be replaceable with
+objects of the base class without breaking the application.
+
+❌ BAD - Inconsistent behavior:
+  class Animal { public virtual void Fly() { } }
+  class Bird : Animal { }
+  class Penguin : Animal
+  {
+	public override void Fly() { throw new Exception(); }
+	// Penguins cannot fly!
+  }
+
+✅ GOOD - Correct hierarchy:
+    class Bird
+    {
+        public void LayEggs() { }
+    }
+
+    class FlyingBird : Bird
+    {
+        public virtual void Fly() { }
+    }
+
+    class Sparrow : FlyingBird
+    {
+        public override void Fly() { }
+    }
+
+    class Penguin : Bird
+    {
+        // No Fly() method → no violation
+    }
+
+
+💡 You are violating LSP if:
+  • A subclass throws exceptions for methods it inherits.
+  • A subclass removes behavior expected by the base class.
+  • A subclass adds constraints that the base class didn’t have.
+  • A subclass changes meaning of inherited methods.
+  • A subclass breaks client code that uses the base class.
+
+💡 INHERITANCE vs. COMPOSITION:
+  If you need add preconditions or postconditions to a method, 
+  you should not be using inheritance, but rather composition. 
+  Composition delegates work to another object, instead of inheriting from a base class. 
+  This way you can add constraints without breaking the LSP.
+
+   class SecureFileReader
+    {
+        private readonly FileReader _reader = new FileReader();
+
+        public string ReadSafe(string path)
+        {
+            if (!path.StartsWith("/safe/"))
+                throw new UnauthorizedAccessException();
+
+            return _reader.Read(path);
+        }
+    }
+
+
+💡 BENEFITS:
+  • Correct inheritance hierarchies.
+  • Predictable code.
+  • Fewer unexpected exceptions.
+

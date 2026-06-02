@@ -1,0 +1,14 @@
+═══════════════════════════════════════════════════════════════
+I - INTERFACE SEGREGATION PRINCIPLE (ISP)
+═══════════════════════════════════════════════════════════════
+
+📋 DEFINITION:
+Clients should not depend on interfaces they do not use.
+
+💡 Concepts:
+The idea is better to have multiple small interfaces than one large for general purposes.
+
+💡 BENEFITS:
+  • Cleaner interfaces. Specific interfaces are easier to interact with and test.
+  • Less coupling. A change in one part won't breake another classes.
+  • Greater flexibility. You can mix interfaces to create a class with complex behaviours.

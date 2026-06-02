@@ -1,0 +1,20 @@
+═══════════════════════════════════════════════════════════════
+S - SINGLE RESPONSIBILITY PRINCIPLE (SRP)
+═══════════════════════════════════════════════════════════════
+
+📋 DEFINITION:
+A class should have one, and only one, reason to change.
+Each class should have a single responsibility.
+
+💡 You are violating SRP if:
+  • A class does too many things.
+  • A class changes too often.
+  • A class mixes business logic, infrastructure or validation.
+  • A class has long methods doing unrelated tasks.
+  • A class has too many dependencies.
+
+💡 BENEFITS:
+  • More maintainable code.
+  • More reusable classes.
+  • Easier unit testing.
+  

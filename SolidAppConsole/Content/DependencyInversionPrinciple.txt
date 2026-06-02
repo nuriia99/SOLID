@@ -1,0 +1,15 @@
+═══════════════════════════════════════════════════════════════
+D - DEPENDENCY INVERSION PRINCIPLE (SRP)
+═══════════════════════════════════════════════════════════════
+
+📋 DEFINITION:
+Depend on abstractions, not on concrete implementations.
+
+💡 BENEFITS:
+  • Low coupling.
+  • Easy to test.
+  • Flexible and extensible.
+
+💡 DIP vs. Dependency Injection (DI):
+Dependency injection is a design pattern. The class should not be responsible for creating
+its dependencies. Instead, shifts the creation responsibility to another class.

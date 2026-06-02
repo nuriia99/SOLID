@@ -1,0 +1,59 @@
+═══════════════════════════════════════════════════════════════
+O - OPEN/CLOSED PRINCIPLE (OCP)
+═══════════════════════════════════════════════════════════════
+
+📋 DEFINITION:
+Classes should be OPEN for extension,
+but CLOSED for modification.
+
+❌ BAD - Modifying existing code:
+    class PaymentProcessor
+    {
+        public void Process(string method)
+        {
+            if (method == "CreditCard")
+                ProcessCreditCard();
+            else if (method == "PayPal")
+                ProcessPayPal();
+            else if (method == "Bizum")
+                ProcessBizum();
+        }
+    }
+
+
+✅ GOOD - Use inheritance/interfaces:
+    interface IPaymentMethod
+    {
+        void Process();
+    }
+
+    class CreditCard : IPaymentMethod
+    {
+        public void Process() { /* ... */ }
+    }
+
+    class PayPal : IPaymentMethod
+    {
+        public void Process() { /* ... */ }
+    }
+
+    class PaymentProcessor
+    {
+        public void Process(IPaymentMethod method)
+        {
+            method.Process();
+        }
+    }
+
+💡 You achieve OCP using:
+  • Interfaces.
+  • Abstract classes.
+  • Polymorphism.
+  • Dependency Injection.
+  • Strategy pattern.
+  • Composition over inheritance.
+
+💡 BENEFITS:
+  • More flexible code.
+  • Less error prone.
+  • Extensible without risks.

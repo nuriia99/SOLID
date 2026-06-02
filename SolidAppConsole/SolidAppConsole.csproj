@@ -5,6 +5,32 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<ConsoleHost>WindowsTerminal</ConsoleHost>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Content\DependencyInversionPrinciple.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\InterfaceSegregationPrinciple.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\LiskovSubstitutionPrinciple.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\OpenClosedPrinciple.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\SingleResponsibilityPrinciple.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Copiar todo el contenido de la carpeta Content al output para evitar que falten archivos -->
+    <None Include="Content\**\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
